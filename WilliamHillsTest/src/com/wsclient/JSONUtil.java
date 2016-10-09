@@ -12,32 +12,6 @@ import org.json.simple.parser.JSONParser;
 
 public class JSONUtil 
 {
-	public static String readJSONFileAndConvertToStr(String fileName) 
-	{
-		JSONParser parser = new JSONParser();
-
-		try 
-		{
-			Object obj = parser.parse(new FileReader(fileName));
-			String jsnStr = obj.toString();
-			return jsnStr;
-
-		} catch (FileNotFoundException e) 
-		{
-			e.printStackTrace();
-
-		} catch (IOException e) 
-		{
-			e.printStackTrace();
-
-		} catch (org.json.simple.parser.ParseException e) 
-		{
-			e.printStackTrace();
-		}
-
-		return "";
-	}
-
 	public static JSONArray matchArrayElement(JSONArray values, String tag, String match)
 	{
 		JSONArray matches = new JSONArray();
